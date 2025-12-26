@@ -1,0 +1,48 @@
+
+
+Write a program that takes a number n as input and prints nth number in Fibonacci series. The Fibonacci series is a sequence of numbers in which each number is the sum of the two preceding numbers. The sequence starts with 0 and 1, and then each subsequent number is the sum of the two numbers before it. So, the first few numbers in the series are - 0, 1, 1, 2, 3, 5, 8, 13.
+
+Input Format
+
+Read the integer n, which denotes the position in the Fibonacci sequence.
+
+The program efficiently handles large values of 𝑛 using iterative computation.
+Output Format
+
+Print the nth Fibonacci number.
+Sample Input 0
+
+4
+Sample Output 0
+
+2
+=========================================================================================================================
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int a=0;
+        if(n==1)
+        {
+            System.out.print(a);
+            return;
+        }
+        int b=1;
+        if(n==2)
+        {
+            System.out.print(b);
+            return;
+        }
+        int c=0;
+        int temp;
+        for(int i=3;i<=n;i++)
+        {
+            c=a+b;
+            a=b;
+            b=c;
+        }
+        System.out.print(c);
+    }
+}
